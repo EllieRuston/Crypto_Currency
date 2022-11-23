@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace Cripto_C
 {
     public partial class App : Application
@@ -15,6 +16,7 @@ namespace Cripto_C
 
         protected override void OnStart()
         {
+            
         }
 
         protected override void OnSleep()

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Cripto_C.Models;
+using System.Net.Http;
 
 namespace Cripto_C
 {
@@ -43,7 +44,11 @@ namespace Cripto_C
 
         private void Refresh_Clicked(object sender, EventArgs e)
         {
-            cList.ItemsSource = GetCoins();
-        }
+           
+                cList.ItemsSource = GetCoins();
+               
+            
+
+        }   
     }
 }

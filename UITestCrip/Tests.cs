@@ -8,7 +8,7 @@ using Xamarin.UITest.Queries;
 namespace UITestCrip
 {
     [TestFixture(Platform.Android)]
-    [TestFixture(Platform.iOS)]
+    //[TestFixture(Platform.iOS)]
     public class Tests
     {
         IApp app;
@@ -25,13 +25,19 @@ namespace UITestCrip
             app = AppInitializer.StartApp(platform);
         }
 
-        [Test]
-        public void WelcomeTextIsDisplayed()
-        {
-            AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin.Forms!"));
-            app.Screenshot("Welcome screen.");
+        //[Test]
+        //public void ShouldLoadCurrencies()
+        //{
+        //    // Arrange
+        //    app.Tap()
+        //}
 
-            Assert.IsTrue(results.Any());
-        }
+        [Test]
+        public void OpenRepl()
+            
+            {
+            app.Repl();
+            }
+
     }
 }

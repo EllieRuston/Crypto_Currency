@@ -10,16 +10,19 @@
                     <ViewCell Height="150">
                         <StackLayout Orientation="Horizontal" Margin="10" Padding="10">
                             <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" WidthRequest="165">
-                                <Label x:Name="lbl_name" Text="{Binding Name}" TextColor="#DDE9F4" FontSize="25" VerticalTextAlignment="Center" 
+                                <Label x:Name="lbl_name" AutomationId="lbl_name"
+                                       Text="{Binding Name}" TextColor="#DDE9F4" FontSize="25" VerticalTextAlignment="Center" 
                                        HorizontalTextAlignment="End"/>
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                                    <Label x:Name="lbl_price" Text="{Binding Price_usd, StringFormat='{}{0:c}'}" TextColor="#DDE9F4" 
+                                    <Label x:Name="lbl_price" AutomationId="lbl_price"
+                                           Text="{Binding Price_usd, StringFormat='{}{0:c}'}" TextColor="#DDE9F4" 
                                            FontSize="Medium" VerticalTextAlignment="Center" Margin="20,0,0,0"/>
-                                    <Label x:Name="lbl_assetid" Text="{Binding Asset_id}" TextColor="#DDE9F4" FontSize="Medium" Margin="20,0,0,0"/>
+                                    <Label x:Name="lbl_asset_id" AutomationId="lbl_asset_id"
+                                           Text="{Binding Asset_id}" TextColor="#DDE9F4" FontSize="Medium" Margin="20,0,0,0"/>
                                 </StackLayout>
                             </StackLayout>
 
-                            <Image x:Name="c_image" Source="{Binding Icon_url}" HorizontalOptions="StartAndExpand" 
+                            <Image x:Name="c_image" AutomationId="c_image" Source="{Binding Icon_url}" HorizontalOptions="StartAndExpand" 
                                    VerticalOptions="CenterAndExpand" Margin="10,0,0,0"/>
                         </StackLayout>
                     </ViewCell>
@@ -28,7 +31,7 @@
         </ListView>
         <Button x:Name="Refresh" Clicked="Refresh_Clicked" Text="Refresh Crypto" 
                 Background="#DDE9F4" BorderColor="#2E4238" Margin="10" CornerRadius="25"
-                TextColor="#2E4238" FontAttributes="Bold"/>
+                TextColor="#2E4238" FontAttributes="Bold" AutomationId="Refresh"/>
     </StackLayout>
 
 </ContentPage>
