@@ -38,7 +38,6 @@ namespace Cripto_C.UITest
             app.Tap(c => c.Marked("Refresh"));
             app.Screenshot("Updated Data");
             //Assert
-           
         }
 
         [Test]
@@ -47,13 +46,6 @@ namespace Cripto_C.UITest
             app.Repl();  
         }
 
-        [Test]
-        public void MainPageTest()
-        {
-            app.WaitForElement(x =>
-            x.Marked("cList").Index(0));
-            app.Tap(x => x.Marked("cList").Index(0));
-        }
 
     }
 }

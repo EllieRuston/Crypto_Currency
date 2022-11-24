@@ -5,7 +5,7 @@ using Cripto_C;
 
 namespace Cripto_C.Models
 {
-    public class Coin
+    public class Cryp_Coin
     {
         public string Name { get; set; }
 
