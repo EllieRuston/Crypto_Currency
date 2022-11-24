@@ -24,14 +24,14 @@ namespace Cripto_C
         private List<Cryp_Coin> GetCryp()
         {
             List<Cryp_Coin> crypto;
-
+            // call 5 crypto currencies
             var coin_api = new RestClient("http://rest.coinapi.io/v1/assets/DOT;ZEC;TRX;USDT;ENJ");
             var request = new RestRequest();
+            // validation key
             request.AddHeader("X-CoinAPI-Key", ApiKey);
-
             var response = coin_api.Execute(request);
             crypto = JsonConvert.DeserializeObject<List<Cryp_Coin>>(response.Content);
-
+            // get icon for each currency
             foreach (var c in crypto)
             {
                 if (!string.IsNullOrEmpty(c.Id_icon))
@@ -45,20 +45,17 @@ namespace Cripto_C
 
         private void Refresh_Clicked(object sender, EventArgs e)
         {
-
+            // App Centre Analytics data
             try
             {
                 Crashes.GenerateTestCrash();
-
             }
             catch (Exception exception)
             {
                 Crashes.TrackError(exception);
             }
-            
+            // call new data for crypto currency
             cList.ItemsSource = GetCryp();
-               
-            
 
         }   
     }
