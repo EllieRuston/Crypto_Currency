@@ -13,34 +13,31 @@ namespace Cripto_C.Droid
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
-        { 
+        {   // run Crash Center
             AppCenter.Start("android=53983c67-e32f-452d-acac-b6c95b05d5f9;",
                        typeof(Analytics), typeof(Crashes));
 
-           
+            // Orignal OnCreate commands 
                 base.OnCreate(savedInstanceState);
-
                 Xamarin.Essentials.Platform.Init(this, savedInstanceState);
                 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
                 LoadApplication(new App());
-
+            
+            // App Center Crash data
             try
             {
                 Crashes.GenerateTestCrash();
-
             }
             catch (Exception exception)
             {
                 Crashes.TrackError(exception);
             }
-
         }
 
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
